@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import ExpensesOutput from '../constants/ExpensesOutput/ExpensesOutput';
+import ExpensesOutput from '../components/ExpensesOutput/ExpensesOutput';
 
 const AllExpenses = () => {
   return <ExpensesOutput expensesPeriod='Total' />;
