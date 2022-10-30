@@ -13,6 +13,10 @@ const ManageExpense = ({ route, navigation }) => {
   // the !! turns editedExpenseId into a boolean so if we do have
   // the editedExpenseId this value will be true else it will be false
 
+  const selectedExpense = expensesCtx.expenses.find(
+    (expense) => expense.id === editedExpenseId
+  );
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: isEditing ? 'Edit Expense' : 'Add Expense',
@@ -42,6 +46,7 @@ const ManageExpense = ({ route, navigation }) => {
         submitButonLabel={isEditing ? 'Update' : 'Add'}
         onCancel={cancelHandler}
         onSubmit={confirmHandler}
+        defaultValues={selectedExpense}
       />
       {isEditing && (
         <View style={styles.deleteContainer}>
